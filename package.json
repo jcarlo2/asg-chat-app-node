@@ -1,0 +1,36 @@
+{
+  "name": "asg-chat-app-node",
+  "version": "1.0.0",
+  "description": "demo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcarlo2/asg-chat-app-node.git"
+  },
+  "author": "Vendiola, John Carlo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcarlo2/asg-chat-app-node/issues"
+  },
+  "homepage": "https://github.com/jcarlo2/asg-chat-app-node#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.4.3",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.32.1",
+    "socket.io": "^4.7.1",
+    "supervisor": "^0.12.0",
+    "ws": "^8.13.0"
+  }
+}
