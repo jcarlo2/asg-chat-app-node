@@ -14,24 +14,3 @@ io.on("connection", async (socket) => {
 });
 
 module.exports = io;
-
-
-// socket.on("send-message", async (room, message, username) => {
-//   // const user = await User.findOne({ where: { username } });
-//   // const messageEntity = await Message.create({
-//   //   conversationId: room,
-//   //   message,
-//   //   username,
-//   // });
-//   console.log(message);
-//   socket.emit("received", message);
-//   socket.to(room).emit("received", message);
-
-//   // socket.to(room.toString()).emit("hey", {
-//   //   id: 5,
-//   //   initial: `${user.firstName.charAt(0)}${user.lastName.charAt(0)}`,
-//   //   fullName: `${user.firstName} ${user.lastName}`,
-//   //   content: message,
-//   //   username,
-//   // });
-// });

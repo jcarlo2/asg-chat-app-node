@@ -199,6 +199,9 @@ const unblockAndUnfriend = async (req, res) => {
   await user.save();
   friendship.status = "";
   await friendship.save();
+  res.json({
+    success: true
+  })
 };
 
 const block = async (req, res) => {

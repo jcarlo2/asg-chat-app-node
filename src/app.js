@@ -33,12 +33,15 @@ const io = require("socket.io")(server, {
 });
 
 io.on("connection", async (socket) => {
-  socket.on("send", async (room, message, username) => {
+  socket.on("send", async ({ room, message, username }) => {
     const user = await User.findOne({ where: { username } });
     const messageEntity = await Message.create({
       conversationId: room,
       message,
       username,
+    });
+    const meme = await Message.findOne({
+      where: { id: messageEntity.id },
     });
     const newMessage = {
       id: messageEntity.id,
@@ -47,7 +50,12 @@ io.on("connection", async (socket) => {
       content: message,
       username,
     };
-    io.emit(room.toString(), newMessage, room, messageEntity.createdAt);
+    io.emit(room.toString(), newMessage, room, meme.createdAt);
+  });
+
+  socket.on("change", ({ friendId, action }) => {
+    console.log(`${friendId} : @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@`)
+    if(typeof friendId === 'number') io.emit(`change-list-${friendId}`, action);
   });
 });
 

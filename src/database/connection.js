@@ -7,14 +7,14 @@ const sequelize = new Sequelize("chatzone", "root", "09212440633a", {
   dialectOptions: {
     useUTC: false,
     dateStrings: true,
-    typeCast: function (field, next) { 
-      if (field.type === 'DATETIME') {
-        return field.string()
+    typeCast: function (field, next) {
+      if (field.type === "DATETIME") {
+        return field.string();
       }
-        return next()
-      },
+      return next();
+    },
   },
-  timezone: "+08:00"
+  timezone: "+08:00",
 });
 
 const testConnection = async () => {
